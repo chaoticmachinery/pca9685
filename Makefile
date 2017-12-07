@@ -20,7 +20,6 @@ lib$(NAME).so: lib$(NAME).so.$(VERSION)
         ldconfig -v -n .
         ln -s lib$(NAME).so.$(MAJOR) lib$(NAME).so
 
-lib$(NAME).so.$(VERSION): $(NAME).o
         $(CXX) -pg -shared -Wl,-soname,lib$(NAME).so.$(MAJOR) $^ -o $@
 
 clean:
